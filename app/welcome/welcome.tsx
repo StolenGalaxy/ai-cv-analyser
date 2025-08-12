@@ -9,11 +9,10 @@ export function Welcome() {
       </h1>
 
       <h2 style={{textAlign: "center"}}>
-        Upload your CV below!
+        Upload your CV below...
       </h2>
 
       <input type="file" accept=".pdf,.doc,.docx" style={{width: "250px", marginLeft: "45%", marginTop: "100px"}}></input>
-
     </main>
   );
 }
