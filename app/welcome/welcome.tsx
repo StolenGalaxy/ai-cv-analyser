@@ -1,21 +1,36 @@
-import logoDark from "./logo-dark.svg";
-import logoLight from "./logo-light.svg";
-
 export function Welcome() {
   return (
     <main>
       <h1 style={{textAlign: "center"}}>
-        Laksh's AI CV Analyser
+        Laksh's CV Analyser
       </h1>
 
       <h2 style={{textAlign: "center"}}>
         Upload your CV below...
       </h2>
 
-      <input type="file" accept=".pdf,.doc,.docx" style={{width: "250px", marginLeft: "45%", marginTop: "100px"}}></input>
+      <input type="file" accept=".pdf,.doc,.docx" style={{width: "250px", marginLeft: "45%", marginTop: "100px"}} onChange={ReviewCV}></input>
+
+      <h3 id="review_text" style={{textAlign: "center", fontSize: "35px", marginTop: "20px"}}></h3>
+
     </main>
   );
 }
+
+function ReviewCV(){
+  const review_text = document.getElementById("review_text");
+  const chance = Math.random()
+  if (review_text) {
+    if (chance < 0.5){
+      review_text.textContent = "Laksh says: Wow, that's a really great CV!";
+    }
+    if (chance >= 0.5){
+      review_text.textContent = "Laksh says: I don't think you'll be getting a job any time soon...";
+    }
+
+  }
+}
+
 
 const resources = [
   {
